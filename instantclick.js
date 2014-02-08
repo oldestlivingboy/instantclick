@@ -7,7 +7,7 @@ var InstantClick = function(document, location) {
 	var pHistory = {} // short for "preloadHistory"
 	var p = {} // short for "preloads"
 
-	var useBlacklist
+	var useBlacklist = true // Default to blacklisting
 	var preloadOnMousedown
 	var delayBeforePreload
 	var listeners = {change: []}
@@ -315,7 +315,7 @@ var InstantClick = function(document, location) {
 		for (var i = 0; i < arguments.length; i++) {
 			var arg = arguments[i]
 			if (arg === true) {
-				useBlacklist = true
+				useBlacklist = false
 			}
 			else if (arg == 'mousedown') {
 				preloadOnMousedown = true
