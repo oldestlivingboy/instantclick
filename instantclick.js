@@ -385,3 +385,5 @@ var InstantClick = function(document, location) {
 	}
 
 }(document, location);
+
+InstantClick.init();
