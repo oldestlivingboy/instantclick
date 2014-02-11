@@ -1,4 +1,6 @@
-/* InstantClick 2.0 | (C) 2014 Alexandre Dieulot | http://instantclick.io/license.html */
+/* InstantClick 2.0 | (C) 2014 Alexandre Dieulot | http://instantclick.io/license.html
+   Extended by Brian Kennish <byoogle@gmail.com>
+*/
 var InstantClick = function(document, location) {
 	var currentLocationWithoutHash
 	var urlToPreload
@@ -387,3 +389,9 @@ var InstantClick = function(document, location) {
 }(document, location);
 
 InstantClick.init();
+
+InstantClick.on('change', function() {
+	var event = new Event('Event');
+	event.initEvent('DOMContentLoaded', true, true);
+	document.dispatchEvent(event);
+});
